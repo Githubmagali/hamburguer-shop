@@ -2,6 +2,7 @@
 import React from 'react';
 import { useCart } from '@/context/cartProvider';
 import  CartDisplay from '@/app/cart/page'
+import classNames from 'classnames';
 
 const items = [
     {
@@ -91,7 +92,7 @@ const items = [
 
 ]
 
-function MenuPage() {
+function TakeAway() {
 const { addToCart, removeFromCart, cart} = useCart()
 
 
@@ -122,17 +123,21 @@ const { addToCart, removeFromCart, cart} = useCart()
                                     </>
 
                             )}
+                           
                     
                         </div>
+                      
                     </div>
+                
                 </div>
 
             ))}
-
-           {cart.length > 0 && <CartDisplay />}
+             <div className="animate__slideInRight">
+                {cart.length > 0 && <CartDisplay />}
+                </div>
         </section>
 
     )
 }
 
-export default MenuPage
+export default  TakeAway

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/cartProvider";
+import Wsp from '@/components/wsp'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
       <CartProvider>
         {children}
       </CartProvider>
+      <Wsp />
         </body>
     </html>
   );
