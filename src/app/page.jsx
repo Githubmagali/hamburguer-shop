@@ -6,9 +6,6 @@ import UserPage from '@/components/user'
   return(
   <>
     <UserPage />
-    
-
-
     </>
 
   )

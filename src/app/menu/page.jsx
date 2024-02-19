@@ -1,12 +1,13 @@
 "use client"
 import React from 'react';
 import { useCart } from '@/context/cartProvider';
+import  CartDisplay from '@/app/cart/page'
 
 const items = [
     {
         id: 1,
         img: "/hamb-chik.png",
-        name: "Hamburguer chicken",
+        name: "Chicken",
         description: "meet, cheddar, tomato, lechuga",
         soldOut: false,
         price: 3.44
@@ -14,7 +15,7 @@ const items = [
     {
         id: 2,
         img: "/hamb-xl.png",
-        name: "Hamburguer XL",
+        name: "XL",
         description: "double meet, cheddar, tomato, lechuga",
         soldOut: false,
         price: 4.84
@@ -22,7 +23,7 @@ const items = [
     {
         id: 3,
         img: "/hamb-veg.png",
-        name: "Hamburguer veggie",
+        name: "Veggie",
         description: "textured soybeans, cheddar, tomato, lechuga",
         soldOut: false,
         price: 4.84
@@ -30,7 +31,7 @@ const items = [
     {
         id: 4,
         img: "/hamb-clasic.png",
-        name: "Hamburguer clasic",
+        name: "Clasic",
         description: "meet, cheddar, tomato, lechuga",
         soldOut: false,
         price: 2.44
@@ -38,7 +39,7 @@ const items = [
     {
         id: 5,
         img: "/hamb-chick-xl.png",
-        name: "Hamburguer chicken XL",
+        name: "Chicken XL",
         description: "double chicken, cheddar, tomato, lechuga",
         soldOut: true,
         price: 5.44
@@ -47,7 +48,7 @@ const items = [
     {
         id: 6,
         img: "/hamb-spinach.png",
-        name: "Hamburguer Spinach",
+        name: "Spinach",
         description: "spinach, cheddar, tomato, lechuga",
         soldOut: false,
         price: 5.44
@@ -55,7 +56,7 @@ const items = [
     {
         id: 7,
         img: "/hamb-wholemeal-bread.png",
-        name: "Hamburguer chicken XL",
+        name: "Chicken XL",
         description: "meet, wholemeal bread, cheddar, tomato, lechuga",
         soldOut: false,
         price: 5.44
@@ -64,8 +65,8 @@ const items = [
     {
         id: 8,
         img: "/hamb-bread-bl.png",
-        name: "Hamburguer spinach with bread black",
-        description: "spinach, cheddar, tomato, lechuga",
+        name: "Spinach with bread black",
+        description: "cheddar, tomato, lechuga",
         soldOut: false,
         price: 7.44
     },
@@ -91,7 +92,7 @@ const items = [
 ]
 
 function MenuPage() {
-const { addToCart, removeFromCart} = useCart()
+const { addToCart, removeFromCart, cart} = useCart()
 
 
     return (
@@ -99,7 +100,7 @@ const { addToCart, removeFromCart} = useCart()
         <section className="grid grid-cols-2 px-20 py-5 mt-2 gap-3 shadow-stone-50 ">
             {items.map((item, index) => (
 
-                <div key={index} className="flex items-center">
+                <div key={index} className={`flex items-center ${item.soldOut ? "filter grayscale opacity-80 text-center" : ""}`}>
                     <img
                         src={item.img}
                         alt={item.title}
@@ -108,18 +109,27 @@ const { addToCart, removeFromCart} = useCart()
                     <div className="px-4 gap-x-3 top-0">
                         <p className="text-sm text-center">{item.name}</p>
                         <p className="text-xs text-center">{item.description}</p>
-                        <p className="text-xs text-center font-bold py-2">${item.price}</p>
+                        <p className="text-xs text-center font-bold py-2">{item.soldOut ? "SOLD OUT" : `$ ${item.price}`}</p>
                         <div className="flex gap-x-3 items-center justify-between">
-                        <button className="text-xs rounded-md bg-lime-200 hover:bg-lime-400 py-1 px-4"
-                        onClick={() => addToCart(item)}>Add</button>
-                        <button className="text-xs rounded-md bg-lime-100 hover:bg-lime-200 py-1 px-4"
-                        onClick={() => removeFromCart(item.id)}>Remove</button>
+           
+
+                            {!item.soldOut && (
+                                <>
+                                    <button className="text-xs rounded-md bg-lime-200 hover:bg-lime-400 py-1 px-4"
+                                    onClick={() => addToCart(item)}>Add</button>
+                                    <button className="text-xs rounded-md bg-lime-100 hover:bg-lime-200 py-1 px-4"
+                                    onClick={() => removeFromCart(item.id)}>Remove</button>
+                                    </>
+
+                            )}
+                    
                         </div>
                     </div>
                 </div>
 
-
             ))}
+
+           {cart.length > 0 && <CartDisplay />}
         </section>
 
     )
