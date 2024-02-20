@@ -92,7 +92,7 @@ const items = [
 
 ]
 
-function TakeAway() {
+function Delivery() {
     const { addToCart, removeFromCart, cart, getItemQuantity} = useCart()
 
   console.log(getItemQuantity)
@@ -151,4 +151,4 @@ function TakeAway() {
     )
 }
 
-export default TakeAway
+export default Delivery
