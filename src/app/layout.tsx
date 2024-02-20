@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/cartProvider";
 import Wsp from '@/components/wsp'
+import Navbar from '@/components/navbar'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
       <CartProvider>
+        <Navbar />
         {children}
       </CartProvider>
       <Wsp />

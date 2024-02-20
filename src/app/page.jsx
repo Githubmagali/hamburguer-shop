@@ -27,6 +27,7 @@ const imgs = [
   {
     img: "hamb-veg.png",
     title: "Veggie"
+
   },
   {
     img: "hamb-xl.png",
@@ -34,7 +35,7 @@ const imgs = [
 
   }, {
     img: "hamb-bread-bl.png",
-    title: "bread black"
+    title: "Bread black"
 
   }
 
@@ -64,6 +65,7 @@ function AnimatedItem({ index, children }) {
 function HomePage() {
   return (<>
     <div className="flex flex-wrap justify-center col-4 gap-x-4 p-20">
+      <h1></h1>
       {imgs.map((imagen, index) => (
         <AnimatedItem key={index} index={index}>
           <>
@@ -72,6 +74,7 @@ function HomePage() {
               alt={imagen.title}
               className="w-56 h-56 object-cover rounded-md "
             />
+            <p className='text-center py-2'>{imagen.title}</p>
           </>
         </AnimatedItem>
 
@@ -81,12 +84,12 @@ function HomePage() {
 
 
     {items.map((item, index) => (
-      <div className='flex flex-col col-1 text-center gap-y-3'>
+      <div className='flex flex-col col-1 text-center mb-6'>
         <div key={index} className={`animate__animated animate__slideInRight animate__delay-${2 + index}s`}>
           {item.link ? (
-            <Link href={item.link}>{item.title}</Link>
+            <Link href={item.link} className='hover:bg-lime-600 py-2 px-4 rounded-md'>{item.title}</Link>
           ) : (
-            <span>{item.title}</span>
+            <span className=''>{item.title}</span>
           )}
         </div>
 

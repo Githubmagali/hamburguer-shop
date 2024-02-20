@@ -1,15 +1,15 @@
 "use client"
 import React from 'react';
 import { useCart } from '@/context/cartProvider';
-import  CartDisplay from '@/app/cart/page'
-import classNames from 'classnames';
+import CartDisplay from '@/app/cart/page'
+
 
 const items = [
     {
         id: 1,
         img: "/hamb-chik.png",
         name: "Chicken",
-        description: "meet, cheddar, tomato, lechuga",
+        description: "cheddar, tomato, lechuga",
         soldOut: false,
         price: 3.44
     },
@@ -57,8 +57,8 @@ const items = [
     {
         id: 7,
         img: "/hamb-wholemeal-bread.png",
-        name: "Chicken XL",
-        description: "meet, wholemeal bread, cheddar, tomato, lechuga",
+        name: "Wholemeal bread",
+        description: "wholemeal bread, meet, cheddar, tomato, lechuga",
         soldOut: false,
         price: 5.44
     },
@@ -93,12 +93,13 @@ const items = [
 ]
 
 function TakeAway() {
-const { addToCart, removeFromCart, cart} = useCart()
+    const { addToCart, removeFromCart, cart, getItemQuantity} = useCart()
 
+  console.log(getItemQuantity)
 
-    return (
-   
-        <section className="grid grid-cols-2 px-20 py-5 mt-2 gap-3 shadow-stone-50 ">
+    return (<>
+
+        <section className="relative grid grid-cols-2 px-20 py-20 mt-2 gap-3 shadow-stone-50 ">
             {items.map((item, index) => (
 
                 <div key={index} className={`flex items-center ${item.soldOut ? "filter grayscale opacity-80 text-center" : ""}`}>
@@ -108,36 +109,46 @@ const { addToCart, removeFromCart, cart} = useCart()
                         className="w-20 h-20 object-cover rounded-md "
                     />
                     <div className="px-4 gap-x-3 top-0">
-                        <p className="text-sm text-center">{item.name}</p>
+                        <p className="text-sm text-center font-bold py-3">{item.name}</p>
                         <p className="text-xs text-center">{item.description}</p>
                         <p className="text-xs text-center font-bold py-2">{item.soldOut ? "SOLD OUT" : `$ ${item.price}`}</p>
+                       
                         <div className="flex gap-x-3 items-center justify-between">
-           
+                            
+
 
                             {!item.soldOut && (
                                 <>
                                     <button className="text-xs rounded-md bg-lime-200 hover:bg-lime-400 py-1 px-4"
-                                    onClick={() => addToCart(item)}>Add</button>
+                                        onClick={() => addToCart(item)}>Add</button>
+                                          <p className="text-xs text-center">{getItemQuantity(item.id)}</p>
                                     <button className="text-xs rounded-md bg-lime-100 hover:bg-lime-200 py-1 px-4"
-                                    onClick={() => removeFromCart(item.id)}>Remove</button>
-                                    </>
+                                        onClick={() => removeFromCart(item.id)}>Remove</button>
+                                </>
 
                             )}
-                           
-                    
+
+
                         </div>
                       
+
                     </div>
-                
+
                 </div>
 
             ))}
-             <div className="animate__slideInRight">
-                {cart.length > 0 && <CartDisplay />}
+        
+                <div className="flex items-center col-span-2 justify-center py-8">
+                    {cart.length > 0 && <CartDisplay />}
                 </div>
+        
+            
+         
         </section>
+        
+    </>
 
     )
 }
 
-export default  TakeAway
+export default TakeAway
