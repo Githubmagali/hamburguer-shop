@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const Footer = () => {
+const HourDelivery = () => {
     const hour = new Date().getHours();
     const openHour = 12;
     const closeHour = 23;
@@ -10,7 +10,7 @@ const Footer = () => {
 
 
     return (
-        <footer className="flex justify-center items-center">
+        <div className="flex justify-center items-center">
             {isOpen ?
                 (
                     <Order closeHour={closeHour} openHour={openHour} />
@@ -20,7 +20,7 @@ const Footer = () => {
                     </p>
                 )
             }
-        </footer>
+        </div>
     );
 }
 function Order({ closeHour, openHour }) {
@@ -36,4 +36,4 @@ function Order({ closeHour, openHour }) {
 }
 
 
-export default Footer;
+export default HourDelivery;
