@@ -22,7 +22,7 @@ function NavbarPage() {
                     <a href="" className="hover:text-lime-500 text-xl">Menu</a>
                 </li>
                 <li>
-                    <a href="/shop" className="hover:text-lime-500 text-xl">Shop</a>
+                    <Link href="/shop" className="hover:text-lime-500 text-xl">Shop</Link>
                 </li>
                 <li>
                 <Link href="/buyCart">

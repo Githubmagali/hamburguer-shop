@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 
 
-const CustomAlert = ({ message, onClose }) => {
+const CustomAlert = ({ message, onClose,  alertType }) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       onClose();
@@ -11,8 +11,12 @@ const CustomAlert = ({ message, onClose }) => {
     return () => clearTimeout(timeout);
   }, [onClose]);
 
+  const alertColor = alertType === "success" ? "bg-green-500" : "bg-red-500";
+
+
+
   return (
-    <div className="fixed bottom-0 right-0 mb-4 mr-4 bg-green-500 text-white p-4 rounded-md">
+    <div  className={`fixed bottom-0 right-0 mb-4 mr-4 ${alertColor} text-white p-4 rounded-md`}>
       {message}
     </div>
   );
@@ -25,6 +29,7 @@ function ResendPage() {
   const [message, setMessage] = useState('');
   const [alertMessage, setAlertMessage] = useState("");
   const [isAlertVisible, setIsAlertVisible] = useState(false);
+  const [alertType, setAlertType] = useState(""); 
 
   const handleSendEmail = async () => {
     setIsAlertVisible(true);
@@ -32,6 +37,8 @@ function ResendPage() {
 
     if (fullName === '' || email === '' || message === '') {
       setAlertMessage("Complete todos los campos");
+      setIsAlertVisible(true);
+
 
       return;
 
@@ -101,6 +108,7 @@ function ResendPage() {
           <CustomAlert
             message={alertMessage}
             onClose={() => setIsAlertVisible(false)}
+            alertType={alertType}
           />
         )}
 

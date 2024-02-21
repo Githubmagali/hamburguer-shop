@@ -73,7 +73,7 @@ function HomePage() {
             <img
               src={imagen.img}
               alt={imagen.title}
-              className="w-56 h-56 object-cover rounded-md "
+              className="w-56 h-56 object-cover rounded-md shadow-2xl"
             />
             <p className='text-center py-2'>{imagen.title}</p>
           </>

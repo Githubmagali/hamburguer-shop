@@ -1,6 +1,7 @@
 "use client"
 import React from "react";
 import { useCart } from "@/context/cartProvider";
+import Link from "next/link";
 
 
 
@@ -23,10 +24,8 @@ function CartDisplay() {
                     <p className="">No items in cart.</p>
                 )}
                 <p className="">Total Cost: ${totalCost}</p>
-                <button className="bg-lime-600 hover:bg-lime-400 py-1 px-4 rounded-lg">
-                    Buy now<i class='bx bx-cart-alt'></i>
-                </button>
-
+                <Link className="bg-lime-600 hover:bg-lime-400 py-1 px-4 rounded-lg" href="/buyCart">See order <i class='bx bx-cart-alt'></i></Link>
+           
             </div>
   
 

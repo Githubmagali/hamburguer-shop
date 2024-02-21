@@ -1,9 +1,11 @@
+"use client"
 import Link from "next/link";
-import React from "react";
+import {useEffect} from "react";
 
 const HourDelivery = () => {
-    const hour = new Date().getHours();
-    const openHour = 12;
+    const currentDateTime = new Date();
+    const hour = currentDateTime.getHours();
+    const openHour = 8;
     const closeHour = 23;
     const isOpen = hour >= openHour && hour <= closeHour;
 
