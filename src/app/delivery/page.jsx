@@ -95,7 +95,6 @@ const items = [
 function Delivery() {
     const { addToCart, removeFromCart, cart, getItemQuantity} = useCart()
 
-  console.log(getItemQuantity)
 
     return (<>
 
@@ -117,16 +116,21 @@ function Delivery() {
                             
 
 
-                            {!item.soldOut && (
-                                <>
-                                    <button className="text-xs rounded-md bg-lime-200 hover:bg-lime-400 py-1 px-4"
-                                        onClick={() => addToCart(item)}>Add</button>
-                                          <p className="text-xs text-center">{getItemQuantity(item.id)}</p>
-                                    <button className="text-xs rounded-md bg-lime-100 hover:bg-lime-200 py-1 px-4"
-                                        onClick={() => removeFromCart(item.id)}>Remove</button>
-                                </>
-
-                            )}
+                        {getItemQuantity(item.id) > 0 ? (
+                                    <>
+                                        <button className="text-xs rounded-md bg-lime-200 hover:bg-lime-400 py-1 px-4" onClick={() => addToCart(item)}>
+                                            Add
+                                        </button>
+                                        <p className="text-xs text-center">{getItemQuantity(item.id)}</p>
+                                        <button className="text-xs rounded-md bg-lime-100 hover:bg-lime-200 py-1 px-4" onClick={() => removeFromCart(item.id)}>
+                                            Remove
+                                        </button>
+                                    </>
+                                ) : (
+                                    <button disabled={item.soldOut} onClick={() => addToCart(item)} className='text-xs rounded-md bg-lime-100 hover:bg-lime-200 py-1 px-4'>
+                                        {item.soldOut ? 'Sold Out' : 'Add to cart'}
+                                    </button>
+                                )}
 
 
                         </div>

@@ -12,7 +12,7 @@ function NavbarPage() {
             <Link href="/" className="font-bold text-lime-900 hover:text-lime-400 m-4 px-10 text-2xl">Hamburguer</Link>
             <ul className="flex space-x-9 m-4 px-4">
                 <li className="">
-                    <a href="" className="hover:text-lime-500 text-xl">Location</a>
+                    <Link href="/location" className="hover:text-lime-500 text-xl">Location</Link>
                 </li>
                 <li>
                     <a href="/contact" className="hover:text-lime-500 text-xl ">Contact</a>
@@ -22,10 +22,10 @@ function NavbarPage() {
                     <a href="" className="hover:text-lime-500 text-xl">Menu</a>
                 </li>
                 <li>
-                    <a href="" className="hover:text-lime-500 text-xl">Shop</a>
+                    <a href="/shop" className="hover:text-lime-500 text-xl">Shop</a>
                 </li>
                 <li>
-                <Link href="/takeAway">
+                <Link href="/buyCart">
                  <i className='bx bxs-shopping-bags text-3xl hover:text-lime-500'></i>
                  {totalItems}
                  </Link>

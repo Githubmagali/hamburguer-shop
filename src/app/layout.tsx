@@ -5,7 +5,7 @@ import "./globals.css";
 import { CartProvider } from "@/context/cartProvider";
 import Wsp from '@/components/wsp'
 import Navbar from '@/components/navbar'
-import Hour from '@/app/hour/page'
+
 
 const inter = Inter({ subsets: ["latin"] });
 

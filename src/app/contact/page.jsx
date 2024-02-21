@@ -75,6 +75,7 @@ function ResendPage() {
   };
 
   return (
+    <>
 
     <section className="flex  flex-col items-center justify-center sm:text-center" id="contact">
         <p className="font-bold text-green-800 md:text-3xl pt-20">Send us</p>
@@ -105,6 +106,18 @@ function ResendPage() {
 
       </form>
     </section>
+         <div className="text-center">
+         <a href="https://github.com/Githubmagali">
+             <i className="bx bxl-github p-20 text-7xl hover:text-zinc-300"></i>
+         </a>
+         <a href="mailto:magalivictoria85068@gmail.com">
+             <i className="bx bxl-gmail p-20 text-7xl hover:text-zinc-300"></i>
+         </a>
+         <a href="https://www.linkedin.com/in/magali-fernandez-60a207210/">
+             <i className="bx bxl-linkedin p-20 text-7xl hover:text-zinc-300"></i>
+         </a>
+     </div>
+     </>
   )
 }
 
