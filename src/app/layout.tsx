@@ -5,6 +5,7 @@ import "./globals.css";
 import { CartProvider } from "@/context/cartProvider";
 import Wsp from '@/components/wsp'
 import Navbar from '@/components/navbar'
+import Footer from '@/components/footer'
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
         {children}
       </CartProvider>
       <Wsp />
+      <Footer />
         </body>
     </html>
   );

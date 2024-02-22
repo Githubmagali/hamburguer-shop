@@ -1,20 +1,17 @@
 "use client"
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import './styles.css';
 import {Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 const items = [
     {
         id: 1,
         name: "hamburguer",
-        img: "/hamb-bread-bl.png",
+        img: "/ini.png",
     },
     {
         id: 2,
         name: "hamburger veggie",
-        img: "/hamb-veg.png"
+        img: "/ini2.jpg"
     },
     {
         id: 3,
@@ -49,8 +46,8 @@ const items = [
 function SwiperImg() {
     return (
         <>
-            <div className='flex items-center justify-center h-screen'>
-                <div className=' w-2/3 h-80'>
+           
+          <div className=''>
                     <Swiper
                         loop
                         spaceBetween={30}
@@ -59,14 +56,13 @@ function SwiperImg() {
                           delay: 2500,
                           disableOnInteraction: false,
                         }}
-                        
                         modules={[Autoplay, Pagination, Navigation]}
-                        className="mySwiper"
+                       
                         >
                         {items.map((item, index) => (
                             <SwiperSlide key={index}>
                                 <div className='overflow-hidden'>
-                                    <img src={item.img} alt={item.name} className='w-full' />
+                                    <img src={item.img} alt={item.name} className='w-full h-96'/>
                                 </div>
                             </SwiperSlide>
 
@@ -75,7 +71,7 @@ function SwiperImg() {
 
                     </Swiper>
                 </div>
-            </div>
+       
 
         </>
     );

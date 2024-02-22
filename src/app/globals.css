@@ -8,10 +8,8 @@
 @import 'swiper/css/pagination';
 @import "boxicons/css/boxicons.min.css";
 @import 'animate.css';
+
 body{
-  @apply bg-lime-50
+  @apply bg-lime-100
 }
 
-.cart-display-container {
-  @apply transition-transform duration-300 ease-in-out fixed top-0 right-0 h-full w-[300px] overflow-y-auto bg-lime-50 z-50;
-}

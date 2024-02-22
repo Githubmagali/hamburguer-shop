@@ -7,41 +7,22 @@ import Swiper from './swiper/page'
 
 
 
-
-const items = [
-  {
-    title: "Delivery",
-    link: "/delivery"
-  },
-  {
-    title: "Products",
-    link: "/takeAway"
-
-  },
-  {
-    title: "Specialties",
-    link: "/takeAway"
-  }
-]
-
-
-
 const imgs = [
   {
-    id:1,
+    id: 1,
     img: "hamb-veg.png",
     title: "Veggie",
     description: "description"
 
   },
   {
-    id:2,
+    id: 2,
     img: "hamb-xl.png",
     title: "XL",
     description: "description"
 
   }, {
-    id:3,
+    id: 3,
     img: "hamb-bread-bl.png",
     title: "Bread black",
     description: "description"
@@ -54,7 +35,7 @@ const imgs = [
 
 
 function AnimatedItem({ index, children }) {
- 
+
   const [ref, inView] = useInView({
     triggerOnce: true, // La animación solo se activa una vez
   });
@@ -74,46 +55,39 @@ function AnimatedItem({ index, children }) {
 
 function HomePage() {
   return (<>
-    <div className="flex flex-wrap justify-center col-4 gap-x-4 pt-20">
-      <h1></h1>
-     
-     
-     
+    <div className=''>
+      <Swiper />
+      <div className="flex justify-center bg-lime-100">
+        <div className='grid grid-cols-3 gap-x-4'>
+          <h1 className='text-center col-span-4 py-20 text-4xl font-bold'>Nuestas especialidades</h1>
+          {imgs.map((imagen, index) => (
+            <AnimatedItem key={index} index={index} >
+              <>
+                <div>
+                  <img
 
-      {imgs.map((imagen, index) => (
-        <AnimatedItem key={index} index={index} >
-          <>
-          <div>
-            <img
-           
-              src={imagen.img}
-              alt={imagen.title}
-              className="w-56 h-56 object-cover rounded-md shadow-2xl"
-            />
-            <p className='text-center py-2'>{imagen.title}</p>
-            </div>
-          
-          </>
-        </AnimatedItem>
+                    src={imagen.img}
+                    alt={imagen.title}
+                    className="w-56 h-56 object-cover rounded-md shadow-2xl"
+                  />
+                  <p className='text-center py-2 text-xl'>{imagen.title}</p>
+                  <p className='text-center py-2'>{imagen.description}</p>
+                </div>
 
-      ))}
-    </div>
-    
-    
-    {items.map((item, index) => (
-      <div className='flex flex-col col-1 text-center mb-6' key={index}>
-        <div  className={`animate__animated animate__slideInRight animate__delay-${2 + index}s`}>
-          {item.link ? (
-            <Link href={item.link} className='bg-lime-200 hover:bg-lime-600 py-2 px-4 rounded-md'>{item.title}</Link>
-          ) : (
-            <span className=''>{item.title}</span>
-          )}
+              </>
+            </AnimatedItem>
+
+          ))}
         </div>
       </div>
-    ))}
-     <div className='py-9'><Hour /></div>
 
-     <Swiper />
+
+      <div className='py-9'><Hour /></div>
+
+
+    </div>
+
+
 
   </>)
 }

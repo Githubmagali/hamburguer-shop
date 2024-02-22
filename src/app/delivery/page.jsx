@@ -97,8 +97,8 @@ function Delivery() {
 
 
     return (<>
-
-        <section className="relative grid grid-cols-2 px-20 py-20 mt-2 gap-3 shadow-stone-50 ">
+     <div className="container mx-auto">
+            <div className="grid grid-cols-2 px-20 py-20 mt-2 gap-3 shadow-stone-50">
             {items.map((item, index) => (
 
                 <div key={index} className={`flex items-center ${item.soldOut ? "filter grayscale opacity-80 text-center" : ""}`}>
@@ -141,14 +141,9 @@ function Delivery() {
                 </div>
 
             ))}
-        
-                <div className="flex items-center col-span-2 justify-center py-8">
-                    {cart.length > 0 && <CartDisplay />}
-                </div>
-        
-            
-         
-        </section>
+        </div>
+        </div>
+        {cart.length > 0 && <CartDisplay />}
         
     </>
 

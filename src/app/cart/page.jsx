@@ -9,7 +9,7 @@ function CartDisplay() {
     const { cart, totalCost } = useCart();
 
     return (
-            <div className="flex flex-col  col-2 items-center gap-y-3 bg-lime-100 rounded-lg w-full py-5 ">
+            <div className="flex flex-col col-2 items-center gap-y-3 bg-lime-100 w-full py-5 mx-auto">
                 <h2 className="font-bold">Your Cart</h2>
                 {cart.length > 0 ? (
                     <ul className="">
