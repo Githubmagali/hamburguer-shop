@@ -1,7 +1,29 @@
 "use client"
 import React from 'react';
 import { useCart } from '@/context/cartProvider';
-import CartDisplay from '@/app/cart/page'
+
+export const imgs = [
+    {
+      id: 1,
+      img: "hamb-veg.png",
+      title: "Veggie",
+      description: "description"
+    },
+    {
+      id: 2,
+      img: "hamb-xl.png",
+      title: "XL",
+      description: "description"
+    },
+    {
+      id: 3,
+      img: "hamb-bread-bl.png",
+      title: "Bread black",
+      description: "description"
+    }
+  ];
+  
+
 
 const items = [
     {
@@ -113,13 +135,14 @@ const items = [
 function Shop() {
    
     const { addToCart, removeFromCart, getItemQuantity} = useCart()
-
+   
 
     return (
         <div className="flex justify-center items-center h-screen">
             <div className="grid grid-cols-4 text-center gap-y-7">
                 {items.map((item, index) => (
-                    <div key={index} className={`flex items-center ${item.soldOut ? "filter grayscale opacity-80 text-center" : ""}`}>
+                    <div key={index} className={`flex items-center ${item.soldOut ? "filter grayscale opacity-80 text-center" : ""}`}
+                    >
                         <img
                             src={item.img}
                             alt={item.name}

@@ -1,8 +1,10 @@
 "use client"
-import 'animate.css';
 import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
 import Hour from '@/app/hour/page'
+import Swiper from './swiper/page'
+
+
 
 
 
@@ -26,17 +28,23 @@ const items = [
 
 const imgs = [
   {
+    id:1,
     img: "hamb-veg.png",
-    title: "Veggie"
+    title: "Veggie",
+    description: "description"
 
   },
   {
+    id:2,
     img: "hamb-xl.png",
-    title: "XL"
+    title: "XL",
+    description: "description"
 
   }, {
+    id:3,
     img: "hamb-bread-bl.png",
-    title: "Bread black"
+    title: "Bread black",
+    description: "description"
 
   }
 
@@ -46,6 +54,7 @@ const imgs = [
 
 
 function AnimatedItem({ index, children }) {
+ 
   const [ref, inView] = useInView({
     triggerOnce: true, // La animación solo se activa una vez
   });
@@ -67,24 +76,33 @@ function HomePage() {
   return (<>
     <div className="flex flex-wrap justify-center col-4 gap-x-4 pt-20">
       <h1></h1>
+     
+     
+     
+
       {imgs.map((imagen, index) => (
-        <AnimatedItem key={index} index={index}>
+        <AnimatedItem key={index} index={index} >
           <>
+          <div>
             <img
+           
               src={imagen.img}
               alt={imagen.title}
               className="w-56 h-56 object-cover rounded-md shadow-2xl"
             />
             <p className='text-center py-2'>{imagen.title}</p>
+            </div>
+          
           </>
         </AnimatedItem>
 
       ))}
     </div>
     
+    
     {items.map((item, index) => (
-      <div className='flex flex-col col-1 text-center mb-6'>
-        <div key={index} className={`animate__animated animate__slideInRight animate__delay-${2 + index}s`}>
+      <div className='flex flex-col col-1 text-center mb-6' key={index}>
+        <div  className={`animate__animated animate__slideInRight animate__delay-${2 + index}s`}>
           {item.link ? (
             <Link href={item.link} className='bg-lime-200 hover:bg-lime-600 py-2 px-4 rounded-md'>{item.title}</Link>
           ) : (
@@ -94,6 +112,8 @@ function HomePage() {
       </div>
     ))}
      <div className='py-9'><Hour /></div>
+
+     <Swiper />
 
   </>)
 }
