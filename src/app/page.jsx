@@ -1,6 +1,5 @@
 "use client"
 import { useInView } from 'react-intersection-observer';
-import Link from 'next/link';
 import Hour from '@/app/hour/page'
 import Swiper from './swiper/page'
 
@@ -55,8 +54,10 @@ function AnimatedItem({ index, children }) {
 
 function HomePage() {
   return (<>
-    <div className=''>
+  
       <Swiper />
+       <div className='py-9'><Hour /></div>
+
       <div className="flex justify-center bg-lime-100">
         <div className='grid grid-cols-3 gap-x-4'>
           <h1 className='text-center col-span-4 py-20 text-4xl font-bold'>Nuestas especialidades</h1>
@@ -82,10 +83,7 @@ function HomePage() {
       </div>
 
 
-      <div className='py-9'><Hour /></div>
-
-
-    </div>
+     
 
 
 

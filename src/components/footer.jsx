@@ -22,7 +22,7 @@ function Footer(){
        
          </div>
         </div>
-        <div className="flex items-center justify-center text-gray-500 bg-lime-50">Derechos reservados de autor</div>
+        <div className="flex items-center justify-center text-gray-500 bg-lime-50">&#169; Derechos reservados de autor</div>
         </>
     )
 }

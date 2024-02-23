@@ -27,7 +27,7 @@ const HourDelivery = () => {
 }
 function Order({ closeHour, openHour }) {
     return (
-        <div className="flex flex-col col-1 text-center gap-y-8">
+        <div className="flex flex-col col-1 text-center gap-y-8 py-20">
             <p className="">
                 We're open from {openHour}:00 to {closeHour}:00. Come visit us or order
                 online.
