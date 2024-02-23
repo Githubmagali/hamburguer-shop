@@ -128,36 +128,37 @@ function Shop() {
             {overlayVisible && (
                 <div className="fixed z-50 top-0 left-0 flex items-center justify-center w-full h-full bg-gray-800 bg-opacity-50" onClick={closeOverlay}>
 
-                    <img src="/sale.jpg" alt="Imagen en overlay" className="w-70 h-56" />
+                    <img src="/sale.jpg" alt="Imagen en overlay" className="lg:w-1/2 sm:w-1/2 md:w-1/2" />
                 </div>
             )}
 
-            <div className="flex justify-center items-center h-screen">
-                <div className="grid grid-cols-4 text-center gap-y-7">
+            <div className="flex justify-center items-center h-screen lg:pt-20">
+                <div className="grid sm:gap-y-5 lg:grid-cols-3 text-center lg:gap-4 lg:max-w-screen-lg">
                     {items.map((item, index) => (
                         <div key={index} className={`flex items-center ${item.soldOut ? "filter grayscale opacity-80 text-center" : ""}`}
                         >
                             <img
                                 src={item.img}
                                 alt={item.name}
-                                className="w-20 h-20 object-cover rounded-md"
+                                className="w-20 h-20 object-cover rounded-md lg:col-span-1 lg:4"
                             />
-                            <div >
+                            <div className='lg:col-span-1 lg:p-4' >
                                 <p className='text-center text-green-800'>{item.name}</p>
                                 <p className='text-xs pt-1'>un :{item.quantity}</p>
                                 <p className='text-xs py-2'> $ {item.price}</p>
                             </div>
-                            <div className="flex items-center gap-x-4">
+                            <div className="lg:col-span-1 lg:p-4">
                                 {getItemQuantity(item.id) > 0 ? (
                                     <>
-
-                                        <button className="text-xs rounded-md bg-lime-200 hover:bg-lime-400 px-1 " onClick={() => addToCart(item)}>
+                                    <div className='lg:flex lg:gap-x-2'>
+                                        <button className="text-xs rounded-md bg-lime-300 hover:bg-lime-400 px-1 " onClick={() => addToCart(item)}>
                                             +
                                         </button>
                                         <p className="text-xs text-center">{getItemQuantity(item.id)}</p>
-                                        <button className="text-xs rounded-md bg-lime-100 hover:bg-lime-200 px-1" onClick={() => removeFromCart(item.id)}>
+                                        <button className="text-xs rounded-md bg-lime-200 hover:bg-lime-300 px-1" onClick={() => removeFromCart(item.id)}>
                                             -
                                         </button>
+                                        </div>
 
 
                                     </>

@@ -2,6 +2,7 @@
 import { useInView } from 'react-intersection-observer';
 import Hour from '@/app/hour/page'
 import Swiper from './swiper/page'
+import Footer from '@/components/footer'
 
 
 
@@ -50,8 +51,6 @@ function AnimatedItem({ index, children }) {
   );
 }
 
-
-
 function HomePage() {
   return (<>
   
@@ -59,8 +58,7 @@ function HomePage() {
        <div className='py-9'><Hour /></div>
 
       <div className="flex justify-center bg-lime-100">
-        <div className='grid grid-cols-3 gap-x-4'>
-          <h1 className='text-center col-span-4 py-20 text-4xl font-bold'>Nuestas especialidades</h1>
+        <div className='lg:grid lg:grid-cols-3 lg:gap-x-4'>
           {imgs.map((imagen, index) => (
             <AnimatedItem key={index} index={index} >
               <>
@@ -86,7 +84,7 @@ function HomePage() {
      
 
 
-
+      <Footer />
   </>)
 }
 export default HomePage

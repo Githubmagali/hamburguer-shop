@@ -5,7 +5,7 @@ import "./globals.css";
 import { CartProvider } from "@/context/cartProvider";
 import Wsp from '@/components/wsp'
 import Navbar from '@/components/navbar'
-import Footer from '@/components/footer'
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body>
       <CartProvider>
         <Navbar />
         {children}
+        <Wsp />
       </CartProvider>
-      <Wsp />
-      <Footer />
+     
         </body>
     </html>
   );
