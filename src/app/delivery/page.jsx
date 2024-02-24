@@ -97,7 +97,11 @@ function Delivery() {
 
 
     return (<>
-        <div className="flex items-center justify-center mx-auto">
+    <div className='flex '>
+    
+            {cart.length > 0 && <CartDisplay />}
+
+        <div className="flex items-center justify-center flex-1 w-full">
             <div className="grid grid-cols-2 px-20 py-20 mt-2 gap-3 shadow-stone-50">
                 {items.map((item, index) => (
 
@@ -113,7 +117,7 @@ function Delivery() {
                             <p className="text-xs text-center font-bold py-2">{item.soldOut ? "SOLD OUT" : `$ ${item.price}`}</p>
 
 
-                            <div className="flex gap-x-3 items-center justify-between">
+                            <div className="flex gap-x-3 items-center gap-x-5">
 
 
                                 {getItemQuantity(item.id) > 0 ? (
@@ -144,10 +148,10 @@ function Delivery() {
                 ))}
 
             </div>
-            <div className='px-3'>
-            {cart.length > 0 && <CartDisplay />}
-            </div>
+            
         </div>
+     
+            </div>
 
 
     </>

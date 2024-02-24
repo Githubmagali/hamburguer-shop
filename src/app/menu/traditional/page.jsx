@@ -16,7 +16,7 @@ const items=[
 ]
 
 
-function Special(){
+function Traditional(){
     return(
         <div className="flex items-center justify-center p-28">
 
@@ -39,4 +39,4 @@ function Special(){
   
     )
 }
-export default  Special
+export default  Traditional

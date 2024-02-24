@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import { useCart } from '@/context/cartProvider';
+import NavbarCart from '@/app/navbarCart/page'
 
 
 
@@ -63,7 +64,7 @@ const items = [
     },
     {
         id: 7,
-        name: "Nuggets meet",
+        name: "Nuggets veggie",
         quantity: "12",
         subtitle: "the best meet",
         price: 12.00,
@@ -113,7 +114,7 @@ const items = [
 
 function Shop() {
 
-    const { addToCart, removeFromCart, getItemQuantity } = useCart()
+    const { cart, addToCart, removeFromCart, getItemQuantity } = useCart()
     const [overlayVisible, setOverlayVisible] = useState(true); // Inicialmente visible
 
     const closeOverlay = () => {
@@ -131,15 +132,16 @@ function Shop() {
                 </div>
             )}
 
-            <div className="flex justify-center items-center h-screen lg:pt-20">
-                <div className="grid sm:gap-y-5 lg:grid-cols-3 text-center lg:gap-4 lg:max-w-screen-lg">
+       
+            <div className="flex justify-center items-center px-10 pb-28 ">
+                <div className="grid sm:gap-y-5 lg:grid-cols-3 text-center lg:pt-40 h-screen">
                     {items.map((item, index) => (
-                        <div key={index} className={`flex items-center ${item.soldOut ? "filter grayscale opacity-80 text-center" : ""}`}
+                        <div key={index} className={`flex items-center grid grid-cols-3 ${item.soldOut ? "filter grayscale opacity-80 text-center" : ""}`}
                         >
                             <img
                                 src={item.img}
                                 alt={item.name}
-                                className="w-20 h-20 object-cover rounded-md lg:col-span-1 lg:4"
+                                className="w-20 h-20 object-cover rounded-md lg:col-span-1 lg:4 "
                             />
                             <div className='lg:col-span-1 lg:p-4' >
                                 <p className='text-center text-green-800'>{item.name}</p>
@@ -148,7 +150,7 @@ function Shop() {
                             <div className="lg:col-span-1 lg:p-4">
                                 {getItemQuantity(item.id) > 0 ? (
                                     <>
-                                    <div className='lg:flex lg:gap-x-2'>
+                                    <div className='lg:flex lg:gap-x-3'>
                                         <button className="text-xs rounded-md bg-lime-300 hover:bg-lime-400 px-1 " onClick={() => addToCart(item)}>
                                             +
                                         </button>
@@ -170,7 +172,7 @@ function Shop() {
                     ))}
                 </div>
             </div>
-
+            <NavbarCart />
         </>);
 }
 

@@ -9,7 +9,7 @@ function CartDisplay() {
     const { cart, totalCost } = useCart();
 
     return (
-            <div className="flex flex-col col-2 items-center gap-y-3 bg-lime-100 w-full py-5 mx-auto">
+            <div className="flex flex-col col-2 items-center justify-center bg-lime-100 px-9 gap-y-3 h-full absolute right-0 shadow-slate-500 shadow-lg shadow-cyan-500/50">
                 <h2 className="font-bold">Your Cart</h2>
                 {cart.length > 0 ? (
                     <ul className="">
@@ -27,6 +27,7 @@ function CartDisplay() {
                 <Link className="bg-lime-600 hover:bg-lime-400 py-1 px-4 rounded-lg" href="/buyCart">See order <i class='bx bx-cart-alt'></i></Link>
            
             </div>
+          
   
 
     )

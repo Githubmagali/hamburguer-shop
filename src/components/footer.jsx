@@ -1,7 +1,7 @@
 function Footer(){
     return(
         <>
-        <div className="md:flex md:items-center bg-lime-50 left-0 right-0">
+        <div className="lg:flex lg:items-center bg-lime-50 left-0 right-0">
             <div className="md:grid md:grid-cols-3 md:gap-x-20 top-0 pb-5 pl-10 py-2">
          <ul>
             <li className="text-gray-500 sm:text-sm ">Certificado  Kosher</li>
