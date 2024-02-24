@@ -20,7 +20,7 @@ const items = [
     {
         id: 2,
         name: "Bread black XL",
-        quantity: "6",
+        quantity: "",
         subtitle: "biggest bread black with seeds",
         price: 7.00,
         img: "/bread-black-shop-xl.png",
@@ -37,11 +37,10 @@ const items = [
     },
     {
         id: 4,
-        name: "Hamburguer meet",
-        quantity: "12",
+        name: "Papas",
         subtitle: "the best meet",
         price: 11.99,
-        img: "/hamb-meet-shop.png",
+        img: "/papas.jpg",
         soldOut: false
     },
     {
@@ -115,10 +114,10 @@ const items = [
 function Shop() {
 
     const { addToCart, removeFromCart, getItemQuantity } = useCart()
-    const [overlayVisible, setOverlayVisible] = React.useState(true); // Inicialmente visible
+    const [overlayVisible, setOverlayVisible] = useState(true); // Inicialmente visible
 
     const closeOverlay = () => {
-        setOverlayVisible(false);
+        setOverlayVisible(!overlayVisible);
     };
 
 
@@ -144,7 +143,6 @@ function Shop() {
                             />
                             <div className='lg:col-span-1 lg:p-4' >
                                 <p className='text-center text-green-800'>{item.name}</p>
-                                <p className='text-xs pt-1'>un :{item.quantity}</p>
                                 <p className='text-xs py-2'> $ {item.price}</p>
                             </div>
                             <div className="lg:col-span-1 lg:p-4">

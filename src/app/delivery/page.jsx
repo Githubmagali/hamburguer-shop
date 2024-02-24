@@ -93,58 +93,63 @@ const items = [
 ]
 
 function Delivery() {
-    const { addToCart, removeFromCart, cart, getItemQuantity} = useCart()
+    const { addToCart, removeFromCart, cart, getItemQuantity } = useCart()
 
 
     return (<>
-     <div className="container mx-auto">
+        <div className="flex items-center justify-center mx-auto">
             <div className="grid grid-cols-2 px-20 py-20 mt-2 gap-3 shadow-stone-50">
-            {items.map((item, index) => (
+                {items.map((item, index) => (
 
-                <div key={index} className={`flex items-center ${item.soldOut ? "filter grayscale opacity-80 text-center" : ""}`}>
-                    <img
-                        src={item.img}
-                        alt={item.title}
-                        className="w-20 h-20 object-cover rounded-md "
-                    />
-                    <div className="px-4 gap-x-3 top-0">
-                        <p className="text-sm text-center font-bold py-3">{item.name}</p>
-                        <p className="text-xs text-center">{item.description}</p>
-                        <p className="text-xs text-center font-bold py-2">{item.soldOut ? "SOLD OUT" : `$ ${item.price}`}</p>
-                       
-                        <div className="flex gap-x-3 items-center justify-between">
-                            
+                    <div key={index} className={`flex items-center ${item.soldOut ? "filter grayscale opacity-80 text-center" : ""}`}>
+                        <img
+                            src={item.img}
+                            alt={item.title}
+                            className="w-20 h-20 object-cover rounded-md "
+                        />
+                        <div className="px-4 gap-x-3 top-0">
+                            <p className="text-sm text-center font-bold py-3">{item.name}</p>
+                            <p className="text-xs text-center">{item.description}</p>
+                            <p className="text-xs text-center font-bold py-2">{item.soldOut ? "SOLD OUT" : `$ ${item.price}`}</p>
 
 
-                        {getItemQuantity(item.id) > 0 ? (
+                            <div className="flex gap-x-3 items-center justify-between">
+
+
+                                {getItemQuantity(item.id) > 0 ? (
                                     <>
-                                        <button className="text-xs rounded-md bg-lime-200 hover:bg-lime-400 py-1 px-4" onClick={() => addToCart(item)}>
+                                        <button className="text-xs rounded-md bg-lime-400 hover:bg-lime-500 py-1 px-4" onClick={() => addToCart(item)}>
                                             +
                                         </button>
                                         <p className="text-xs text-center">{getItemQuantity(item.id)}</p>
-                                        <button className="text-xs rounded-md bg-lime-100 hover:bg-lime-200 py-1 px-4" onClick={() => removeFromCart(item.id)}>
-                                           -
+                                        <button className="text-xs rounded-md bg-lime-200 hover:bg-lime-300 py-1 px-4" onClick={() => removeFromCart(item.id)}>
+                                            -
                                         </button>
                                     </>
                                 ) : (
-                                    <button disabled={item.soldOut} onClick={() => addToCart(item)} className='text-xs rounded-md bg-lime-100 hover:bg-lime-200 py-1 px-4'>
+                                    <button disabled={item.soldOut} onClick={() => addToCart(item)} className='text-xs rounded-md bg-lime-300 hover:bg-lime-400 py-1 px-4'>
                                         {item.soldOut ? 'Sold Out' : 'Add to cart'}
                                     </button>
                                 )}
 
 
+
+                            </div>
+
+
                         </div>
-                      
 
                     </div>
 
-                </div>
+                ))}
 
-            ))}
+            </div>
+            <div className='px-3'>
+            {cart.length > 0 && <CartDisplay />}
+            </div>
         </div>
-        </div>
-        {cart.length > 0 && <CartDisplay />}
-        
+
+
     </>
 
     )

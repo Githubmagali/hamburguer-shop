@@ -44,7 +44,7 @@ function AnimatedItem({ index, children }) {
     <div
       ref={ref}
       className={`py-10 px-9 rounded-md animate__animated ${inView ? 'animate__fadeInUp' : ''}`}
-      style={{ animationDelay: `${index * 0.2}s` }}
+      style={{ animationDelay: `${index * 0.9}s` }}
     >
       {children}
     </div>
@@ -55,8 +55,8 @@ function HomePage() {
   return (<>
   
       <Swiper />
-       <div className='py-9'><Hour /></div>
 
+      <div className='py-9'><Hour /></div>
       <div className="flex justify-center bg-lime-100">
         <div className='lg:grid lg:grid-cols-3 lg:gap-x-4'>
           {imgs.map((imagen, index) => (
@@ -79,11 +79,6 @@ function HomePage() {
           ))}
         </div>
       </div>
-
-
-     
-
-
       <Footer />
   </>)
 }

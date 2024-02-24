@@ -10,40 +10,44 @@ function Location() {
                                     <div className="grid col-1">
                                         <p className="text-gray-400 "><i class='bx bxs-phone-call'></i>+54 11 23 436</p>
                                         <p className="text-gray-400 ">hamb90@mail.com</p>
+                                        <p className="text-gray-400 text-sm ">Lun-sab 8:00-23:00</p>
                                     </div>
                                     <div className="grid col-2">
                                         <p className=" text-lg">CABA</p>
-                                        <li className=" text-gray-400 ">Av. Galicia 100, B1868BGA Piñeyro</li>
+                                        <li className=" text-gray-400 ">Av. Galicia 100, B1868BGA</li>
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-2 p-4 ">
                                     <div className="grid col-1">
                                         <p className="text-gray-400 "><i class='bx bxs-phone-call'></i>+54 11 23 430</p>
                                         <p className="text-gray-400 ">hamb92@mail.com</p>
+                                        <p className="text-gray-400 text-sm ">Lun-sab 8:00-23:00</p>
                                     </div>
                                     <div className="grid col-2">
                                         <p className=" text-lg">La Lucila</p>
-                                        <li className=" text-gray-400 ">San Lorenzo 300, B1637BMC La Lucila Buenos Aires</li>
+                                        <li className=" text-gray-400 ">San Lorenzo 300, B1637BMC </li>
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-2 p-4 ">
                                     <div className="grid col-1">
                                         <p className="text-gray-400 "><i class='bx bxs-phone-call'></i>+54 11 23 432</p>
                                         <p className="text-gray-400 ">hamb93@mail.com</p>
+                                        <p className="text-gray-400 text-sm ">Lun-sab 8:00-23:00</p>
                                     </div>
                                     <div className="grid col-2">
                                         <p className=" text-lg">Benavidez</p>
-                                        <li className=" text-gray-400 ">Av. Luis Vernet 200, Benavidez</li>
+                                        <li className=" text-gray-400 ">Av. Luis Vernet 200, B1637BMC</li>
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-2 p-4 ">
                                     <div className="grid col-1">
                                         <p className="text-gray-400 "><i class='bx bxs-phone-call'></i>+54 11 23 432</p>
                                         <p className="text-gray-400 ">hamb93@mail.com</p>
+                                        <p className="text-gray-400 text-sm ">Lun-sab 8:00-23:00</p>
                                     </div>
                                     <div className="grid col-2">
-                                        <p className=" text-lg">Benavidez</p>
-                                        <li className=" text-gray-400 ">Av. Luis Vernet 200, Benavidez</li>
+                                        <p className=" text-lg">Olivos</p>
+                                        <li className=" text-gray-400 ">Entre Ríos 3000, B1637BMC </li>
                                     </div>
                                 </div>
                             </ul>

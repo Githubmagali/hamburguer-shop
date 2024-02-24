@@ -6,17 +6,17 @@ const items = [
     {
         id: 1,
         name: "hamburguer",
-        img: "/ini.png",
+        img: "/benavidez.png",
     },
     {
         id: 2,
         name: "hamburger veggie",
-        img: "/ini2.jpg"
+        img: "/caba.png"
     },
     {
         id: 3,
         name: "nuggets",
-        img: "/home-order.png"
+        img: "/LaLucila.jpg"
     },
     {
         id: 4,
@@ -32,7 +32,7 @@ const items = [
     {
         id: 6,
         name: "hamb-wholemeal",
-        img: "/hamb-wholemeal-bread.png"
+        img: "/benavidez.png"
     },
     {
         id: 7,
