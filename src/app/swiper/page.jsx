@@ -6,17 +6,17 @@ const items = [
     {
         id: 1,
         name: "hamburguer",
-        img: "/benavidez.png",
+        img: "/hamb-veg-shop.png",
     },
     {
         id: 2,
         name: "hamburger veggie",
-        img: "/caba.png"
+        img: "/hamb-chik.png"
     },
     {
         id: 3,
         name: "nuggets",
-        img: "/LaLucila.jpg"
+        img: "/hamb-chicken-w.jpg"
     },
     {
         id: 4,
@@ -32,7 +32,7 @@ const items = [
     {
         id: 6,
         name: "hamb-wholemeal",
-        img: "/benavidez.png"
+        img: "/hamb-veg-shop.png"
     },
     {
         id: 7,
@@ -61,8 +61,8 @@ function SwiperImg() {
                         >
                         {items.map((item, index) => (
                             <SwiperSlide key={index}>
-                                <div className='overflow-hidden'>
-                                    <img src={item.img} alt={item.name} className='w-full h-96'/>
+                                <div className='overflow-hidden flex items-center justify-center'>
+                                    <img src={item.img} alt={item.name} className='w-96'/>
                                 </div>
                             </SwiperSlide>
 

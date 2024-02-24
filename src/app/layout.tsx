@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/cartProvider";
-import Wsp from '@/components/wsp'
 import Navbar from '@/components/navbar'
 
 
@@ -23,7 +22,6 @@ export default function RootLayout({ children }) {
       <CartProvider>
         <Navbar />
         {children}
-        <Wsp />
       </CartProvider>
      
         </body>

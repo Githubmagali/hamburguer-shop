@@ -3,8 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import Hour from '@/app/hour/page'
 import Swiper from './swiper/page'
 import Footer from '@/components/footer'
-
-
+import Wsp from '@/components/wsp'
 
 
 const imgs = [
@@ -25,6 +24,13 @@ const imgs = [
     id: 3,
     img: "hamb-bread-bl.png",
     title: "Bread black",
+    description: "description"
+
+  },
+  {
+    id: 4,
+    img: "hamb-spinach.png",
+    title: "Spinach",
     description: "description"
 
   }
@@ -53,12 +59,10 @@ function AnimatedItem({ index, children }) {
 
 function HomePage() {
   return (<>
-  
-      <Swiper />
 
-      <div className='py-9'><Hour /></div>
-      <div className="flex justify-center bg-lime-100">
-        <div className='lg:grid lg:grid-cols-3 lg:gap-x-4'>
+  
+      <div className="flex justify-center text-center pt-24">
+        <div className='lg:grid lg:grid-cols-4 lg:gap-x-4'>
           {imgs.map((imagen, index) => (
             <AnimatedItem key={index} index={index} >
               <>
@@ -78,6 +82,11 @@ function HomePage() {
           ))}
         </div>
       </div>
+      <Wsp />
+
+      <div className='py-9'><Hour /></div>
+
+      <Swiper />
       <Footer />
   </>)
 }

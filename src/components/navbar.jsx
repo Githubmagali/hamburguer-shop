@@ -48,6 +48,7 @@ function NavbarPage() {
                 <li>
                     <a href="/contact" className="hover:text-lime-500 text-xl ">Contact</a>
                 </li>
+                
                 <ListaDesplegable />
                 <li>
                     <Link href="/shop" className="hover:text-lime-500 text-xl">Shop</Link>

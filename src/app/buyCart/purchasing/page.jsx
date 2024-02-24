@@ -8,7 +8,7 @@ function Purchasing() {
     const { cart, totalCost } = useCart();
 
     return (<>
-        <div className="flex items-center justify-center h-screen bg-lime-50">
+        <div className="flex items-center justify-center pt-40 bg-lime-50">
             <div className="grid grid-cols-2 gap-2 w-full">
                 <div className=" px-3">
                     <div className="border-t-8 border-green-800 px-48 rounded-xl"> </div>
@@ -24,7 +24,11 @@ function Purchasing() {
 
                         </div>
                     </div>
+                    <div className="pt-8 w-24 pl-6">
+                    <FormBuy />
+                    </div>
                 </div>
+               
                 <div className="px-3">
                     <div className="border-t-8 border-green-800 px-48 rounded-xl"> </div>
                     <h1 className="text-2xl pt-6 pb-7 pl-3 text-gray-500 ">Resumen del pedido</h1>
@@ -44,9 +48,12 @@ function Purchasing() {
                     </div>
                     <p className="text-center pt-3 text-gray-500 text-xl">Total Cost: ${totalCost}</p>
                 </div>
+               
+                
             </div>
+           
         </div>
-        <FormBuy />
+       
     </>
     )
 }
