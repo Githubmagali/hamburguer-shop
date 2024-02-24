@@ -70,7 +70,6 @@ function HomePage() {
                     className="w-56 h-56 object-cover rounded-md shadow-2xl"
                   />
                   <p className='text-center py-2 text-xl'>{imagen.title}</p>
-                  <p className='text-center py-2'>{imagen.description}</p>
                 </div>
 
               </>

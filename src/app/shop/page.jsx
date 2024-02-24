@@ -172,7 +172,9 @@ function Shop() {
                     ))}
                 </div>
             </div>
-            <NavbarCart />
+
+            {cart.length > 0 &&  <NavbarCart />}
+           
         </>);
 }
 
