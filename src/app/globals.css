@@ -10,7 +10,5 @@
 @import "boxicons/css/boxicons.min.css";
 @import 'animate.css';
 
-body{
-  @apply bg-lime-100
-}
+
 

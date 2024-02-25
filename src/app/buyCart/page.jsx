@@ -7,7 +7,7 @@ function BuyCart() {
     const { cart, totalCost } = useCart();
 
     return (
-        <div className="grid grid-cols-3 bg-lime-100  text-center text-xl  pt-40 px-64 gap-y-10">
+        <div className="grid grid-cols-3 text-center text-xl  pt-40 px-64 gap-y-10">
             <div className="col-span-3 text-center">
                 <h2 className="font-bold text-green-800">Your Cart</h2>
             </div>

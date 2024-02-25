@@ -14,10 +14,10 @@ function Purchasing() {
     }
 
     return (<>
-        <div className="flex items-center justify-center pt-40 bg-lime-50">
+        <div className="flex items-center justify-center pt-40 ">
             <div className="grid grid-cols-2 gap-2 w-full">
                 <div className=" px-3">
-                    <div className="border-t-8 border-green-800 px-48 rounded-xl"> </div>
+                    <div className="border-t-8 border-gray-200 px-48 rounded-xl"> </div>
                     <h1 className="text-2xl pt-6 pb-7 pl-3 text-gray-500 ">Seleccione un método de envio</h1>
                     <div className="border border-gray-200 border-4 border-solid rounded-xl">
                         <div className="flex items-center justify-content left-0 pt-20 pb-3 lg:gap-x-16">
@@ -55,7 +55,7 @@ function Purchasing() {
                 </div>
 
                 <div className="px-3">
-                    <div className="border-t-8 border-green-800 px-48 rounded-xl"> </div>
+                    <div className="border-t-8 border-gray-200 px-48 rounded-xl"> </div>
                     <h1 className="text-2xl pt-6 pb-7 pl-3 text-gray-500 ">Resumen del pedido</h1>
                     <div className="relative py-24 px-48 border border-gray-200 border-4 border-solid rounded-xl overflow-scroll max-h-[2rem]">
                         {cart.length > 0 ? (
