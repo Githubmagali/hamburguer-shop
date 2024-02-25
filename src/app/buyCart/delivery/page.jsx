@@ -1,9 +1,9 @@
 "use client"
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import CustomAlert from '../../../components/alert';
 
 
-function DeliveryBuy({ serverData }) {
+function DeliveryBuy() {
 
     const [alertMessage, setAlertMessage] = useState("");
     const [isAlertVisible, setIsAlertVisible] = useState(false);
@@ -18,24 +18,6 @@ function DeliveryBuy({ serverData }) {
         date: '',
     })
 
-    // Nuevo estado para indicar si la solicitud fue exitosa
-    const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
-
-    useEffect(() => {
-        // Si la solicitud fue exitosa, reinicia el estado formData
-        if (isSubmitSuccessful) {
-            setFormData({
-                email: '',
-                name: '',
-                address: '',
-                dto: '',
-                date: '',
-            });
-
-            // Restablece el estado de isSubmitSuccessful para futuros envíos
-            setIsSubmitSuccessful(false);
-        }
-    }, [isSubmitSuccessful]);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -43,42 +25,61 @@ function DeliveryBuy({ serverData }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-      
+        setIsAlertVisible(true);
+
+        if (formData.email === '' || formData.name === '' || formData.address === '' || formData.dto === '' || formData.date === '') {
+            setAlertMessage("Complete todos los campos");
+            setIsAlertVisible(true);
+            setAlertType("error");
+            setIsAlertVisible(true);
+
+
+            return;
+        }
+
         try {
-          const response = await fetch('/api/submitFormData', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-          });
-      
-          if (response.ok) {
-            const result = await response.json();
-            console.log('Respuesta del servidor:', result);
-      
-            // Actualiza el estado para indicar que la solicitud fue exitosa
-            setIsSubmitSuccessful(true);
-      
-            setAlertMessage("Mensaje enviado con éxito");
-            setAlertType("success");
-          } else {
+            const response = await fetch('/api/submitFormData', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log('Respuesta del servidor:', result);
+
+
+
+                setAlertMessage("Pedido enviado con éxito");
+                setAlertType("success");
+                setFormData({
+                    email: '',
+                    name: '',
+                    address: '',
+                    dto: '',
+                    date: '',
+                });
+            } else {
+                setAlertMessage("Error al enviar el mensaje");
+                setAlertType("error");
+            }
+        } catch (error) {
+            console.error("Error sending email:", error);
             setAlertMessage("Error al enviar el mensaje");
             setAlertType("error");
-          }
-        } catch (error) {
-          console.error("Error sending email:", error);
-          setAlertMessage("Error al enviar el mensaje");
-          setAlertType("error");
         }
-      
+
+
         setTimeout(() => {
-          setIsAlertVisible(false);
-          setAlertMessage("");
-          setAlertType("");
+            setIsAlertVisible(false);
+            setAlertMessage("");
+            setAlertType("");
         }, 2000);
-      };
-      
+
+
+    };
 
 
     return (<>
@@ -135,12 +136,12 @@ function DeliveryBuy({ serverData }) {
                 <button className='px-10 bg-gray-400 mx-14 text-white hover:bg-gray-600'>Next</button>
 
                 {isAlertVisible && (
-            <CustomAlert
-              message={alertMessage}
-              onClose={() => setIsAlertVisible(false)}
-              alertType={alertType}
-            />
-          )}
+                    <CustomAlert
+                        message={alertMessage}
+                        onClose={() => setIsAlertVisible(false)}
+                        alertType={alertType}
+                    />
+                )}
 
             </form>
 
