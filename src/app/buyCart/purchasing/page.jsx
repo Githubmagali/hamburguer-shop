@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useCart } from "../../../context/cartProvider";
 import FormBuy from '../../buyCart/takeaway/page'
-import DeliveryBuy from '../../buyCart/delivery/page'
+import DeliveryBuy from '../deliveryCart/page'
 
 
 function Purchasing() {

@@ -32,7 +32,7 @@ function Order({ closeHour, openHour }) {
                 We're open from {openHour}:00 to {closeHour}:00. Come visit us or order
                 online.
             </p>
-            <Link href="/delivery" className=" bg-lime-600 hover:bg-lime-800 py-2 px-4 rounded-md">Delivery</Link>
+            <Link href="/del" className=" bg-lime-600 hover:bg-lime-800 py-2 px-4 rounded-md">Delivery</Link>
         </div>
     )
 }

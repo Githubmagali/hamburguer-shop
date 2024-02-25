@@ -58,6 +58,7 @@ function NavbarPage() {
                         {totalItems}
                     </Link>
                 </li>
+               
 
 
 

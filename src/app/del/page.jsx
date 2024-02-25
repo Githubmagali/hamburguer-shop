@@ -1,7 +1,8 @@
+
 "use client"
 import React from 'react';
-import { useCart } from '@/context/cartProvider';
-import CartDisplay from '@/app/cart/page'
+import { useCart } from '../../context/cartProvider';
+import CartDisplay from '../cart/page'
 
 
 const items = [
