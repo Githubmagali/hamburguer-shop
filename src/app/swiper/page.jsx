@@ -6,38 +6,42 @@ const items = [
     {
         id: 1,
         name: "hamburguer",
-        img: "/hamb-veg-shop.png",
+        img: "/hamb-swiper.jpg"
     },
     {
         id: 2,
-        name: "hamburger veggie",
-        img: "/hamb-chik.png"
+        name: "Hamburger veggie",
+        img: "/hamb-swiper-1.jpg",
+        description: "Tuesday 20% OFF"
     },
     {
         id: 3,
-        name: "nuggets",
-        img: "/hamb-chicken-w.jpg"
+        name: "Hamb chicken",
+        img: "/hamb-chicken-w.jpg",
+        description: "Buy from our page and get a 15% discount"
     },
     {
         id: 4,
-        name: "nuggets",
-        img: "/nuggets-meet-shop.png"
+        name: "Hamb XL",
+        img: "/hamb-swiper-3.jpg",
+        description: "New XL!"
 
     },
     {
         id: 5,
         name: "bread black",
-        img: "/bread-black-shop.png"
+        img: "/hamb-swiper-4.jpg"
     },
     {
         id: 6,
         name: "hamb-wholemeal",
-        img: "/hamb-veg-shop.png"
+        img: "/hamb-swiper-5.jpg",
+        description: "The most sold"
     },
     {
         id: 7,
         name: "hamb bread black xl",
-        img: "bread-black-shop-xl.png"
+        img: "/hamb-swiper-6.jpg"
     }
 
 ];
@@ -61,8 +65,9 @@ function SwiperImg() {
                         >
                         {items.map((item, index) => (
                             <SwiperSlide key={index}>
-                                <div className='overflow-hidden flex items-center justify-center'>
-                                    <img src={item.img} alt={item.name} className='w-96'/>
+                                <div className='overflow-hidden flex items-center justify-center '>
+                                    <img src={item.img} alt={item.name} className='w-1/2 h-1/2'/>
+                                    <p className='absolute pt-48 text-3xl font-bold text-white'>{item.description}</p>
                                 </div>
                             </SwiperSlide>
 

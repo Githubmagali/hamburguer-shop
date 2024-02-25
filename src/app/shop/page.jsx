@@ -21,7 +21,6 @@ const items = [
     {
         id: 2,
         name: "Bread black XL",
-        quantity: "",
         subtitle: "biggest bread black with seeds",
         price: 7.00,
         img: "/bread-black-shop-xl.png",
@@ -73,11 +72,11 @@ const items = [
     },
     {
         id: 8,
-        name: "Hamb especial",
+        name: "Hamb chicken XL",
         quantity: "12",
         subtitle: "the best meet",
         price: 12.00,
-        img: "/bread-black-shop-xl.png",
+        img: "/hamb-chick-xl.png",
         soldOut: false
     },
     {
@@ -91,20 +90,19 @@ const items = [
     },
     {
         id: 10,
-        name: "Nuggets meet",
+        name: "Hamb spinach",
         quantity: "12",
         subtitle: "the best meet",
         price: 12.00,
-        img: "/nuggets-meet-shop.png",
+        img: "/hamb-spinach.png",
         soldOut: false
     },
     {
         id: 11,
-        name: "Nuggets meet",
-        quantity: "12",
+        name: "Hamb wholemeal",
         subtitle: "the best meet",
         price: 12.00,
-        img: "/nuggets-meet-shop.png",
+        img: "/hamb-wholemeal-bread.png",
         soldOut: false
     },
 

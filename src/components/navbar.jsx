@@ -21,7 +21,6 @@ export function ListaDesplegable() {
             <div className=" grid grid-col-1 py-9 px-5 bg-lime-100 gap-y-5">
           <Link  className="text-lime-900" href="/menu/spatialities">Spatialities</Link>
           <Link  className="text-lime-900" href="/menu/traditional">Traditional</Link>
-          <Link  className="text-lime-900" href="/menu/benavidez">Benavidez</Link>
           </div>
         </div>
       )}
