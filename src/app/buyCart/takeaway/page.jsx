@@ -1,5 +1,5 @@
 "use client"
-import ListaDesplegable from '@/app/buyCart/formBuy/list'
+import ListaDesplegable from '../takeaway/list'
 import { useState } from 'react';
 import CustomAlert from '../../../components/alert';
 

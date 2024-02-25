@@ -1,9 +1,9 @@
 "use client"
 import { useInView } from 'react-intersection-observer';
-import Hour from '@/app/hour/page'
+import Hour from '../app/hour/page'
 import Swiper from './swiper/page'
-import Footer from '@/components/footer'
-import Wsp from '@/components/wsp'
+import Footer from '../components/footer'
+import Wsp from '../components/wsp'
 
 
 const imgs = [

@@ -2,8 +2,8 @@ import React from 'react';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { CartProvider } from "@/context/cartProvider";
-import Navbar from '@/components/navbar'
+import { CartProvider } from "../context/cartProvider";
+import Navbar from '../components/navbar'
 
 
 

@@ -1,8 +1,8 @@
 "use client"
 import React, { useState } from "react";
-import { useCart } from "@/context/cartProvider";
-import FormBuy from '@/app/buyCart/formBuy/page'
-import DeliveryBuy from '@/app/buyCart/delivery/page'
+import { useCart } from "../../../context/cartProvider";
+import FormBuy from '../../buyCart/takeaway/page'
+import DeliveryBuy from '../../buyCart/delivery/page'
 
 
 function Purchasing() {
