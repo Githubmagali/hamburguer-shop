@@ -14,7 +14,7 @@ export function ListaDesplegable() {
   return (
     <li>
       <div className="hover:text-lime-500 text-xl flex items-center cursor-pointer" onClick={toggleElementos}>
-        Menu <i class='bx bx-chevron-down'></i>
+        Menu <i className='bx bx-chevron-down'></i>
       </div>
       {mostrarElementos && (
         <div className="grid grid-col-1 w-2 h-2">

@@ -1,44 +1,6 @@
 "use client"
-import React, { useState } from 'react';
+import ListaDesplegable from '@/app/buyCart/formBuy/list'
 
-export function ListaDesplegable() {
-  const [mostrarElementos, setMostrarElementos] = useState(false);
-  const [sucursalSeleccionada, setSucursalSeleccionada] = useState('');
-
-  const toggleElementos = () => {
-    setMostrarElementos(!mostrarElementos);
-  };
-
-  const seleccionarSucursal = (sucursal) => {
-    setSucursalSeleccionada(sucursal);
-    setMostrarElementos(false);
-  };
-
-  return (
-    <div>
-      <div className="hover:text-gray-500 text-base flex items-center cursor-pointer text-gray-500" onClick={toggleElementos}>
-        {sucursalSeleccionada || 'Sucursal'} <i className="bx bx-chevron-down"></i>
-      </div>
-      {mostrarElementos && (
-        <div className="grid grid-col-1 w-2 h-2">
-          <div className="grid  py-9 px-5 bg-white gap-y-6 z-20 border border-black">
-            <div className="text-gray-500 cursor-pointer" onClick={() => seleccionarSucursal('CABA')}>
-              CABA
-            </div>
-            <div className="text-gray-500 cursor-pointer" onClick={() => seleccionarSucursal('La Lucila')}>
-              La Lucila
-            </div>
-            <div className="text-gray-500 cursor-pointer" onClick={() => seleccionarSucursal('Benavidez')}>
-              Benavidez
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
-  
 
 
 
@@ -47,10 +9,15 @@ function FormBuy(){
     <section >
         <form className='pb-10' >
             <ListaDesplegable />
+            <label className=' text-gray-400'>Email *</label>
             <input type="text" id="email" className="border p-2 mb-4 rounded" placeholder="Email" required />
+            <label className=' text-gray-400'>Name *</label>
             <input type="text" id="name" className="border p-2 mb-4 rounded" placeholder="Name" required/>
+            <label className=' text-gray-400'>DNI *</label>
             <input type="text" id="dni" className="border p-2 mb-4 rounded" placeholder="DNI" required/>
+            <label className=' text-gray-400'>Phone *</label>
             <input type="text" id="text" className="border p-2 mb-4 rounded" placeholder="Cel" required/>
+            <label className=' text-gray-400'>Date</label>
             <input type="text" id="text" className="border p-2 mb-4 rounded" placeholder="Observations"/>
             
            

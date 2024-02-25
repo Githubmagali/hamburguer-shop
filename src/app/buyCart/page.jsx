@@ -25,7 +25,7 @@ function BuyCart() {
                 )}
                 <p className="">Total Cost: ${totalCost}</p>
                 <Link className="bg-lime-600 hover:bg-lime-400 py-1 my-5 px-4 rounded-lg" href="/buyCart/purchasing"
-                >Buy now <i class='bx bx-cart-alt'></i></Link>
+                >Buy now <i className='bx bx-cart-alt'></i></Link>
            
             </div>
   

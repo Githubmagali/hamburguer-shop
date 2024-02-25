@@ -1,26 +1,7 @@
 "use client"
 import { useState, useEffect } from "react"
+import CustomAlert from "../../components/alert";
 
-
-const CustomAlert = ({ message, onClose,  alertType }) => {
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      onClose();
-    }, 5000);
-
-    return () => clearTimeout(timeout);
-  }, [onClose]);
-
-  const alertColor = alertType === "success" ? "bg-green-500" : "bg-red-500";
-
-
-
-  return (
-    <div  className={`fixed bottom-0 right-0 mb-4 mr-4 ${alertColor} text-white p-4 rounded-md`}>
-      {message}
-    </div>
-  );
-};
 
 
 function ResendPage() {
@@ -29,7 +10,7 @@ function ResendPage() {
   const [message, setMessage] = useState('');
   const [alertMessage, setAlertMessage] = useState("");
   const [isAlertVisible, setIsAlertVisible] = useState(false);
-  const [alertType, setAlertType] = useState(""); 
+  const [alertType, setAlertType] = useState("");
 
   const handleSendEmail = async () => {
     setIsAlertVisible(true);
@@ -84,48 +65,44 @@ function ResendPage() {
   return (
     <>
 
-    <section className="flex  flex-col items-center justify-center sm:text-center" id="contact">
+      <section className="flex  flex-col items-center justify-center sm:text-center " id="contact">
         <p className="font-bold text-green-800 md:text-3xl pt-20">Send us</p>
-      <form className="py-10">
-        <input type="text" id="title" className="border p-2 mb-4 w-full rounded" placeholder="Nombre completo"
-          value={fullName}
-          onChange={(e) => setFullName(e.target.value)} />
-        <input type="email" id="email" placeholder="Email" className="border p-2 mb-4 w-full rounded"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)} />
-        <textarea id="description" className="border p-2 mb-4 w-full resize-none rounded"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}></textarea>
-        <button className="bg-lime-600 hover:bg-lime-800 px-3 py-2 rounded-md"
-          onClick={(e) => {
-            e.preventDefault();
-            handleSendEmail();
-          }}
-        >
-          Send
-        </button>
-        {isAlertVisible && (
-          <CustomAlert
-            message={alertMessage}
-            onClose={() => setIsAlertVisible(false)}
-            alertType={alertType}
-          />
-        )}
+        <form className="py-10">
+          <input type="text" id="title" className="border p-2 mb-4 w-full rounded" placeholder="Nombre completo"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)} />
+          <input type="email" id="email" placeholder="Email" className="border p-2 mb-4 w-full rounded"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)} />
+          <textarea id="description" className="border p-2 mb-4 w-full resize-none rounded"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}></textarea>
+          <button className="bg-lime-600 hover:bg-lime-800 px-3 py-2 rounded-md"
+            onClick={(e) => {
+              e.preventDefault();
+              handleSendEmail();
+            }}
+          >
+            Send
+          </button>
+          {isAlertVisible && (
+            <CustomAlert
+              message={alertMessage}
+              onClose={() => setIsAlertVisible(false)}
+              alertType={alertType}
+            />
+          )}
 
-      </form>
-    </section>
-         <div className="text-center">
-         <a href="https://github.com/Githubmagali">
-             <i className="bx bxl-github p-20 text-7xl hover:text-zinc-300"></i>
-         </a>
-         <a href="mailto:magalivictoria85068@gmail.com">
-             <i className="bx bxl-gmail p-20 text-7xl hover:text-zinc-300"></i>
-         </a>
-         <a href="https://www.linkedin.com/in/magali-fernandez-60a207210/">
-             <i className="bx bxl-linkedin p-20 text-7xl hover:text-zinc-300"></i>
-         </a>
-     </div>
-     </>
+        </form>
+      </section>
+      <div className="text-center">
+        <i className='bx bxl-instagram p-20 text-7xl text-lime-500 hover:text-green-900'></i>
+        <i className="bx bxl-gmail p-20 text-7xl text-lime-500 hover:text-green-900"></i>
+        <i className="bx bxl-facebook-circle p-20 text-lime-500 text-7xl hover:text-green-900"></i>
+        <i className='bx bxl-whatsapp  p-20 text-lime-500 text-7xl hover:text-green-900'></i>
+
+      </div>
+    </>
   )
 }
 
