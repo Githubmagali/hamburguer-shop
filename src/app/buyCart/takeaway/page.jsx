@@ -84,18 +84,50 @@ function FormBuy(){
 
     return(<>
     <section >
-        <form className='pb-10' >
+        <form className='pb-10' onSubmit={handleSubmit} >
             <ListaDesplegable />
             <label className=' text-gray-400'>Email *</label>
-            <input type="text" id="email" className="border p-2 mb-4 rounded" placeholder="Email" required />
+            <input 
+            type="text" 
+            id="email"
+             className="border p-2 mb-4 rounded" 
+             placeholder="Email"
+             onChange={handleChange}
+             value={formData.email}
+              />
             <label className=' text-gray-400'>Name *</label>
-            <input type="text" id="name" className="border p-2 mb-4 rounded" placeholder="Name" required/>
+            <input type="text"
+             id="name"
+              className="border p-2 mb-4 rounded"
+              placeholder="Name"
+               onChange={handleChange}
+               value={formData.name}
+               />
             <label className=' text-gray-400'>DNI *</label>
-            <input type="text" id="dni" className="border p-2 mb-4 rounded" placeholder="DNI" required/>
+            <input type="text"
+             id="dni" 
+             className="border p-2 mb-4 rounded"
+              placeholder="DNI" 
+              onChange={handleChange}
+              value={formData.dni}
+             />
             <label className=' text-gray-400'>Phone *</label>
-            <input type="text" id="phone" className="border p-2 mb-4 rounded" placeholder="Cel" required/>
+            <input
+             type="text"
+             id="phone"
+             className="border p-2 mb-4 rounded" 
+             placeholder="Cel"
+             onChange={handleChange}
+             value={formData.phone}
+              />
             <label className=' text-gray-400'>Date</label>
-            <input type="text" id="date" className="border p-2 mb-4 rounded" placeholder="Observations"/>
+            <input type="text"
+             id="date"
+             className="border p-2 mb-4 rounded" 
+            placeholder="Observations"
+            onChange={handleChange}
+            value={formData.date}
+            />
             
            
             <button className='px-10 bg-gray-400 mx-14 text-white hover:bg-gray-600'>Next</button>

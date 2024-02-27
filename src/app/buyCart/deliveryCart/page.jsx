@@ -93,7 +93,7 @@ function DeliveryBuy() {
                     id="email"
                     className="border p-2 mb-4 rounded"
                     placeholder="Email"
-                    required value={formData.email}
+                     value={formData.email}
                     onChange={handleChange} />
 
                 <label className='text-gray-400'>Name *</label>
@@ -101,16 +101,16 @@ function DeliveryBuy() {
                     id="name"
                     className="border p-2 mb-4 rounded"
                     placeholder="Name"
-                    required
+                    
                     value={formData.name}
                     onChange={handleChange}
                 />
-                <label className=' text-gray-400'>Adress *</label>
+                <label className=' text-gray-400'>Address *</label>
                 <input type="text"
                     id="address"
                     className="border p-2 mb-4 rounded"
                     placeholder="Adress"
-                    required
+                    
                     value={formData.address}
                     onChange={handleChange}
                 />
