@@ -10,14 +10,14 @@ const items = [
     },
     {
         id: 2,
-        name: "Hamburger veggie",
-        img: "/hamb-swiper-1.jpg",
+        name: "Hamburger bread black",
+        img: "/font.png",
         description: "Tuesday 20% OFF"
     },
     {
         id: 3,
-        name: "Hamb chicken",
-        img: "/hamb-chicken-w.jpg",
+        name: "La Lucila",
+        img: "/LaLucila.jpg",
         description: "Buy from our page and get a 15% discount"
     },
     {
@@ -66,7 +66,7 @@ function SwiperImg() {
                         {items.map((item, index) => (
                             <SwiperSlide key={index}>
                                 <div className='overflow-hidden flex items-center justify-center '>
-                                    <img src={item.img} alt={item.name} className='w-1/2 h-1/2'/>
+                                    <img src={item.img} alt={item.name} className='w-full h-56 object-cover'/>
                                     <p className='absolute pt-48 text-3xl font-bold text-white'>{item.description}</p>
                                 </div>
                             </SwiperSlide>

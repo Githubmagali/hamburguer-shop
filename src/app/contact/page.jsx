@@ -1,6 +1,7 @@
 "use client"
 import { useState} from "react"
 import CustomAlert from "../../components/alert";
+import Footer from "../../components/footer";
 
 
 
@@ -102,6 +103,7 @@ function ResendPage() {
         <i className='bx bxl-whatsapp  p-20 text-lime-500 text-7xl hover:text-green-900'></i>
 
       </div>
+      <Footer />
     </>
   )
 }
