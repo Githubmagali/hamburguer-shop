@@ -5,7 +5,6 @@ function Footer(){
             <div className="md:grid md:grid-cols-3 md:gap-x-20 top-0 pb-5 pl-10 py-2">
          <ul>
             <li className="text-gray-500 sm:text-sm ">Certificado  Kosher</li>
-            <li className="text-gray-500 sm:text-sm">Defensa del consumidor</li>
             <li className="text-gray-500 sm:text-sm">Contacto defensa del consumidor 0-800-777-7</li>
             <li className="text-gray-500 sm:text-sm"></li>
          </ul>

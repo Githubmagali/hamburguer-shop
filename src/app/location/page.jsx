@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react';
+import Footer from '../../components/footer';
 
 function Location() {
     const [selectedMapIndex, setSelectedMapIndex] = useState(null);
@@ -45,13 +46,13 @@ function Location() {
 
 return(
     <>
-    <div className="flex items-center justify-center h-screen sm:pt-20">
+    <div className="flex items-center justify-center h-screen pt-48 pb-20">
         <div className="grid grid-cols-2 gap-x-6">
           <div className="flex items-center justify-center">
             <div className="lg:w-96 lg:h-96 sm:w-54 sm:h-80 overflow-scroll bg-white">
               <ul>
               {items.map((item, index)=>(
-                <div key={index} className="grid grid-cols-2 p-4">
+                <div key={index} className="lg:grid lg:grid-cols-2 p-4">
                   <div className="grid col-1">
                     <p className="text-gray-400 "><i className='bx bxs-phone-call'></i>{item.number}</p>
                     <p className="text-gray-400 ">{item.mail}</p>
@@ -80,6 +81,7 @@ return(
           </div>
         </div>
       </div>
+      <Footer />
     </>
 )
   
