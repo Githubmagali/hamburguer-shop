@@ -46,8 +46,8 @@ function Location() {
 
 return(
     <>
-    <div className="flex items-center justify-center h-screen pt-48 pb-20">
-        <div className="grid grid-cols-2 gap-x-6">
+    <div className="flex items-center justify-center lg:h-screen lg:pt-48 sm:pt-28 md:pt-28 pb-20">
+        <div className="grid grid-cols-2 lg:gap-x-6">
           <div className="flex items-center justify-center">
             <div className="lg:w-96 lg:h-96 sm:w-54 sm:h-80 overflow-scroll bg-white">
               <ul>
@@ -68,11 +68,11 @@ return(
               </ul>
             </div>
           </div>
-          <div className="sm:flex sm:items-center sm:justify-center">
+          <div className="">
             {selectedMapIndex !== null && (
               <iframe
                 src={items[selectedMapIndex].map}
-                className="lg:w-96 lg:h-96 sm:w-54 sm:h-80"
+                className="lg:w-96 h-96"
                 allowFullScreen={false}
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"

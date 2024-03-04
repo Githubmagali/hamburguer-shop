@@ -103,7 +103,7 @@ function Delivery() {
             {cart.length > 0 && <CartDisplay />}
 
         <div className="flex items-center justify-center flex-1 w-full">
-            <div className="grid grid-cols-2 px-20 py-20 mt-2 gap-3 shadow-stone-50">
+            <div className="lg:grid lg:grid-cols-2 px-20 py-20 mt-2 gap-3 shadow-stone-50">
                 {items.map((item, index) => (
 
                     <div key={index} className={`flex items-center ${item.soldOut ? "filter grayscale opacity-80 text-center" : ""}`}>

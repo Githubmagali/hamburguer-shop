@@ -18,7 +18,7 @@ function Purchasing() {
             <div className="lg:grid lg:grid-cols-2 gap-2 w-full">
                 <div className="px-3">
                     <div className="border-t-8 border-gray-200 px-48 rounded-xl"> </div>
-                    <h1 className="text-2xl pt-6 pb-7 pl-3 text-gray-500 ">Seleccione un método de envio</h1>
+                    <h1 className="text-2xl pt-6 pb-7 pl-3 text-gray-500 ">Order summary</h1>
                     <div className="border border-gray-200 border-4 border-solid rounded-xl">
                         <div className="flex items-center justify-content left-0 pt-20 pb-3 gap-x-16">
                             <p className={`text-2xl text-gray-500 ${selectedMethod === "takeAway" ? "font-bold" : ""}`}
@@ -55,7 +55,7 @@ function Purchasing() {
 
                 <div className="lg:px-3">
                     <div className="border-t-8 border-gray-200 px-48 rounded-xl"> </div>
-                    <h1 className="text-2xl pt-6 pb-7 lg:pl-3 text-gray-500 ">Resumen del pedido</h1>
+                    <h1 className="text-2xl pt-6 pb-7 lg:pl-3 text-gray-500 ">Order summary</h1>
                     <div className="relative py-24 px-48 border border-gray-200 border-4 border-solid rounded-xl overflow-scroll max-h-[2rem]">
                         {cart.length > 0 ? (
                             <ul className="absolute top-5 lg:grid lg:gap-y-4">

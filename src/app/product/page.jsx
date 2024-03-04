@@ -14,7 +14,7 @@ function Product(){
 
                 </div>
                 <div className="pg">
-                    <p>Texto</p>
+                    <p>Text</p>
 
                 </div>
             </div>

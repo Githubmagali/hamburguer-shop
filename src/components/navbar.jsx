@@ -42,7 +42,7 @@ function NavbarPage() {
 
   return (<>
     <nav className="lg:fixed top-0 left-0 right-0 z-50 flex justify-between items-center lg:bg-lime-100">
-      <Link href="/" className="font-bold text-lime-900 hover:text-lime-400 m-4 px-10 text-2xl w-full">Hamburguer</Link>
+      <Link href="/" className="font-bold text-lime-900 hover:text-lime-400 lg:m-4 lg:px-10 text-2xl lg:w-full">Hamburguer</Link>
       <ul className="sm:flex space-x-9 m-4 hidden w-full">
         <Link href="/location" className="hover:text-lime-500 text-xl">Location</Link>
         <Link href="/contact" className="hover:text-lime-500 text-xl ">Contact</Link>
@@ -56,9 +56,14 @@ function NavbarPage() {
       </ul>
       {/* Icono de hamburguesa para pantallas pequeñas */}
       <div
-        className="sm:hidden cursor-pointer text-3xl text-lime-800 ml-auto"
+        className="flex sm:hidden md:hidden cursor-pointer text-3xl text-lime-800 gap-x-4"
         onClick={() => setMenuVisible(!menuVisible)}
       >
+
+        <Link href="/buyCart" className="text-xl">
+          <i className='bx bxs-shopping-bags'></i>
+          {totalItems}
+        </Link>
         &#9776;
       </div>
 
@@ -67,14 +72,11 @@ function NavbarPage() {
 
     {/* Menú para pantallas pequeñas */}
     {menuVisible && (
-      <div className="flex flex-col sm:flex-row gap-y-4 pl-48 ">
+      <div className="flex flex-col sm:flex-row md:flex-grow gap-y-4">
         <Link href="/location" className="pl-7">Location</Link>
         <Link href="/contact" className="pl-7">Contact</Link>
         <Link href="/shop" className="pl-7">Shop</Link>
-        <Link href="/buyCart" className="pl-5">
-          <i className='bx bxs-shopping-bags text-xl'></i>
-          {totalItems}
-        </Link>
+
       </div>
     )}
 

@@ -126,7 +126,7 @@ function Shop() {
             {overlayVisible && (
                 <div className="fixed z-50 top-0 left-0 flex items-center justify-center w-full h-full bg-gray-800 bg-opacity-50" onClick={closeOverlay}>
 
-                    <img src="/sale.jpg" alt="Imagen en overlay" className="lg:w-1/2 sm:w-1/2 md:w-1/2" />
+                    <img src="/sale.jpg" alt="Imagen en overlay" className="w-1/2" />
                 </div>
             )}
 
