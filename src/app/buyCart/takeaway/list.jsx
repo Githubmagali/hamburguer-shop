@@ -1,41 +1,45 @@
 "use client"
 import { useState } from "react";
 
-function ListaDesplegable() {
-    const [mostrarElementos, setMostrarElementos] = useState(false);
-    const [sucursalSeleccionada, setSucursalSeleccionada] = useState('');
-  
-    const toggleElementos = () => {
-      setMostrarElementos(!mostrarElementos);
-    };
-  
-    const seleccionarSucursal = (sucursal) => {
-      setSucursalSeleccionada(sucursal);
-      setMostrarElementos(false);
-    };
-  
-    return (
-      <div className='pb-3'>
-        <div className="hover:text-gray-500 text-base flex items-center cursor-pointer text-gray-500" onClick={toggleElementos}>
-          {sucursalSeleccionada || 'Sucursal'} <i className="bx bx-chevron-down"></i>
-        </div>
-        {mostrarElementos && (
-          <div className="grid grid-col-1 w-2 h-2">
-            <div className="grid  py-9 px-5 bg-white gap-y-6 z-20 border border-black">
-              <div className="text-gray-500 cursor-pointer" onClick={() => seleccionarSucursal('CABA')}>
-                CABA
-              </div>
-              <div className="text-gray-500 cursor-pointer" onClick={() => seleccionarSucursal('La Lucila')}>
-                La Lucila
-              </div>
-              <div className="text-gray-500 cursor-pointer" onClick={() => seleccionarSucursal('Benavidez')}>
-                Benavidez
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    );
+const location=[
+  {
+    id:1,
+    name:"CABA"
+  },{
+    id:2,
+    name:"La Lucila"
+  },{
+    id:3,
+    name:"Benavidez"
   }
+]
 
-  export default ListaDesplegable
+
+
+function ListaDesplegable() {
+
+
+  return (
+
+ 
+      <div className="relative">
+        <select
+          className="peer block cursor-pointer rounded-md border border-gray-200 py-2 px-14 text-sm outline-2 placeholder:text-gray-500"
+          defaultValue=""
+        >
+          <option value="" className="text-gray-400" disabled>
+            Selected
+          </option>
+
+          {location.map((office) => (
+            <option key={office.id} value={office.id} className="text-gray-400">
+              {office.name}
+            </option>
+          ))}
+        </select>
+
+      </div>
+  );
+}
+
+export default ListaDesplegable
